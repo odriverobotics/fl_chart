@@ -434,13 +434,11 @@ class FlSpot {
   /// Used for splitting lines, or maybe other concepts.
   static const FlSpot nullSpot = FlSpot(double.nan, double.nan);
 
-  static const double nullDoubleSpot = double.nan;
-
   /// Sets zero for x and y
   static const FlSpot zero = FlSpot(0, 0);
 
   /// Determines if [x] or [y] is null.
-  bool isNull() => x == nullDoubleSpot && y == nullDoubleSpot;
+  bool isNull() => x.isNaN && y.isNaN;
 
   /// Determines if [x] and [y] is not null.
   bool isNotNull() => !isNull();
